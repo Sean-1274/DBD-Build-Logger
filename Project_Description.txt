@@ -1,0 +1,69 @@
+Project Name:
+DBD Build & Match Logger
+
+Purpose:
+The purpose of this application is to help Dead by Daylight players track the builds they use
+ and log match results in an organized way. Instead of relying on memory, 
+ users can save perk combinations and record how their matches go over time. 
+ The app will allow players to analyze which builds perform best against specific killers or in 
+ certain situations.
+
+Intended Users:
+This application is designed for Dead by Daylight players who want to track performance, 
+experiment with different builds, and review match outcomes. It is useful for both casual 
+and competitive players who want to improve their gameplay.
+
+
+Main Entities:
+
+Users
+
+Builds
+
+Match Logs
+
+(For this project, the main focus will be on Builds and Match Logs.)
+
+
+Key Features / User Actions:
+
+Users can register for an account.
+
+Users can log in to their account.
+
+Users can create, view, edit, and delete saved builds.
+
+Users can create, view, edit, and delete match logs.
+
+Users can search their match history by killer name, map, result, or notes.
+
+
+Users can filter matches by:
+
+Role (Survivor or Killer)
+
+As/Against (Played as killer or faced a killer)
+
+Each match log can include:
+
+Role played
+
+Killer name
+
+Result
+
+Notes
+
+In future versions, builds will display perk icons and descriptions for each perk and add-on.
+
+Potential Future Improvements:
+
+Display official perk and add-on icons.
+
+Store perk descriptions in a database.
+
+Allow users to select perks from a predefined list instead of typing manually.
+
+Add statistical analysis (win rate per killer, best-performing build, etc.).
+
+Implement advanced search and filtering with database queries.

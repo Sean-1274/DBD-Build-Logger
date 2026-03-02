@@ -1,0 +1,212 @@
+/*---Global page styling---*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #f5f6f8;
+    color: #111;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*---Flexbox Navbar---*/
+.navbar {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 14px 20px;
+    background: #0b0b0b;              /* darker */
+    border-bottom: 1px solid #222;
+}
+
+.navbar a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.2s ease, transform 0.08s ease, color 0.2s ease;
+}
+
+.navbar a:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.navbar a:active {
+    transform: translateY(1px);
+}
+
+/*---Headings---*/
+h1, h2, h3, h4{
+    margin: 12px 0;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 18px 0;
+}
+
+/*---Cards (forms, build cards, match cards)---*/
+.card {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: #d6d6d6;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/*---Forms---*/
+label{
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"],
+select, textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+textarea{
+    resize: vertical;
+    min-height: 90px;
+}
+
+/*---Buttons---*/
+
+input[type="submit"], button{
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    background: #2563eb;
+    color: white;
+
+}
+
+input[type="submit"]:hover{
+    opacity: 0.9;
+}
+
+button{
+    background: #e5e7eb;
+}
+
+button:hover{
+    background: #d1d5db;
+}
+
+/*---Perk Icon Placeholders---*/
+
+.perk-row{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.perk-row span{
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+/* --- Perk Hover --- */
+
+.perk {
+    position: relative;
+}
+
+.perk-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 13px;
+}
+
+.perk:hover .perk-tooltip {
+    display: block;
+}
+
+/*---Image Sizing---*/
+
+.perk img {
+    width: 50px;      
+    height: 50px;     
+    object-fit: contain;
+}
+.hero-img{
+    width: 100%;
+    height: 120px;        
+    object-fit: cover;      
+    object-position: 30% center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;   /* One per row */
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* --- Stat Card --- */
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0f172a;
+    color: #e5e7eb;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+/* Label */
+.stat-label {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* Value */
+.stat-value {
+    font-size: 18px;
+    font-weight: 800;
+}

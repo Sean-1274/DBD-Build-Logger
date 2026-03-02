@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DBD Build Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="register.html">Register</a> |
+        <a href="login.html">Login</a> |
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <main class="container">
+
+    <h1>Dashboard</h1>
+    <img class="hero-img" src="images/dbd_banner.jpg" alt="DBD banner">
+    <p>Create builds and log match results here.</p>
+    <hr>
+
+    <h2>Stats (Placeholder)</h2>
+    <div class="stats-grid">
+
+    <div class="stat-card">
+        <span class="stat-label">Overall Survivor Win Rate</span>
+        <span class="stat-value">62%</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Overall Killer Win Rate</span>
+        <span class="stat-value">71%</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Win Rate vs Spirit</span>
+        <span class="stat-value">55%</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Best Performing Build</span>
+        <span class="stat-value">Stealth Survivor (68%)</span>
+    </div>
+
+</div>
+
+    <hr>
+
+    <!-- Search + Filters -->
+    <h2>Search Match History</h2>
+
+    <form action="#" method="GET">
+
+        <div>
+            <label for="search">Search (Killer, Map, Notes)</label><br>
+            <input type="text" id="search" name="search"
+                   placeholder="Try: Spirit, RPD, 4K..." size="40">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="roleFilter">Role</label><br>
+            <select id="roleFilter" name="roleFilter">
+                <option value="">All</option>
+                <option value="survivor">Survivor</option>
+                <option value="killer">Killer</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="directionFilter">As / Against</label><br>
+            <select id="directionFilter" name="directionFilter">
+                <option value="">All</option>
+                <option value="as">As (I played as killer)</option>
+                <option value="against">Against (I faced this killer)</option>
+            </select>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Search">
+
+    </form>
+
+    <hr>
+
+    <!-- Build Form -->
+    <h2>Create a Build</h2>
+
+    <form class="card" action="#" method="POST">
+
+        <div>
+            <label for="buildName">Build Name</label><br>
+            <input type="text" id="buildName" name="buildName"
+                   placeholder="Example: Survivor Stealth Build" size="25" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="buildDetails">Build Details (Perks/Add-Ons/Notes)</label><br>
+            <textarea id="buildDetails" name="buildDetails"
+                      cols="40" rows="5"
+                      placeholder="Example: Iron Will, Sprint Burst, Urban Evasion, Fixated..."></textarea>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Save Build">
+
+    </form>
+
+    <hr>
+
+    <!-- Match Log Form -->
+    <h2>Log a Match</h2>
+
+    <form class="card" action="#" method="POST">
+
+        <div>
+            <label for="role">Role</label><br>
+            <select id="role" name="role" required>
+                <option value="">-- Select Role --</option>
+                <option value="survivor">Survivor</option>
+                <option value="killer">Killer</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="buildUsed">Build Used</label><br>
+            <select id="buildUsed" name="buildUsed">
+                <option value="">-- Select Build --</option>
+                <option value="stealth">Stealth Survivor Build</option>
+                <option value="regression">Generator Regression Build</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="killerName">Killer Name (Spirit, Nurse, etc.)</label><br>
+            <input type="text" id="killerName" name="killerName"
+                   placeholder="Example: Spirit">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="matchResult">Result</label><br>
+            <select id="matchResult" name="matchResult" required>
+                <option value="">-- Select Result --</option>
+                <option value="escaped">Escaped</option>
+                <option value="died">Died</option>
+                <option value="0k">0K</option>
+                <option value="1k">1K</option>
+                <option value="2k">2K</option>
+                <option value="3k">3K</option>
+                <option value="4k">4K</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="matchNotes">Match Notes</label><br>
+            <textarea id="matchNotes" name="matchNotes"rows="5" cols="40"
+                placeholder="Example: Played on RPD, escaped through hatch, build is good for chase..."></textarea>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Save Match Log">
+
+    </form>
+
+    <hr>
+
+    <!-- Saved Builds -->
+    <h3>Your Saved Builds</h3>
+
+    <div class="build-list">
+
+        <div class="build-card card">
+            <h4>Stealth Survivor Build</h4>
+            <p>Iron Will, Sprint Burst, Urban Evasion, Fixated</p>
+            <div class="perk-row">
+                <div class="perk">
+                    <img src="images/perks/sprint_burst.png" alt="Sprint Burst">
+                    <div class="perk-tooltip">
+                        <strong>Sprint Burst</strong>
+                        <p>When starting to run, break into a sprint at 150% speed for 3 seconds. 
+                            Causes Exhaused Status Effect for 60/50/40 seconds.</p>
+                    </div>
+                </div>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+            </div>
+
+            <br>
+
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+        
+
+        <br>
+
+        <div class="build-card card">
+            <h4>Generator Regression Build</h4>
+            <p>Pop Goes the Weasel, Hex: Ruin, Scourge Hook: Pain Resonance, Hex: Undying</p>
+
+            <div class="perk-row">
+                 <div class="perk">
+                    <img src="images/perks/pop_goes_the_weasel.png" alt="Pop Goes the Weasel">
+                    <div class="perk-tooltip">
+                        <strong>Pop Goes the Weasel</strong>
+                        <p>After hooking a Survivor, Pop Goes the Weasel activates for 35/40/45 seconds.
+                            While active, manually damaging a Generator triggers the following effect: 
+                            Instantly regresses it by -20 % of its current Progression.
+                            Pop Goes the Weasel deactivates after use or once its timer elapses.</p>
+                    </div>
+                </div>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+            </div>
+
+            <br>
+
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+
+    </div>
+
+
+    <hr>
+
+    <!-- Match History -->
+    <h3>Match History</h3>
+
+    <div class="match-list">
+
+        <div class="match-card card">
+            <h4>Spirit (Against)</h4>
+            <p><strong>Role:</strong> Survivor</p>
+            <p><strong>Result:</strong> Escaped via Hatch</p>
+            <p><strong>Notes:</strong> Build felt strong in chase.</p>
+
+            <p><strong>Perks Used:</strong></p>
+            <div class="perk-row">
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+            </div>
+
+            <br>
+
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+
+        <br>
+
+        <div class="match-card card">
+            <h4>Spirit (As)</h4>
+            <p><strong>Role:</strong> Killer</p>
+            <p><strong>Result:</strong> 4K</p>
+            <p><strong>Notes:</strong> Stalling potential was significant.</p>
+
+            <p><strong>Perks Used:</strong></p>
+            <div class="perk-row">
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+                <span>[Perk Icon]</span>
+            </div>
+
+            <br>
+
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+
+    </div>
+    </main>
+</body>
+</html>
