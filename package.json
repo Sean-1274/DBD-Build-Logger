@@ -1,0 +1,29 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "The purpose of this application is to help Dead by Daylight players track the builds they use and log match results in an organized way. Instead of relying on memory, users can save perk combinations and record how their matches go over time. The app allows players to analyze which builds perform best against specific killers or in certain situations.",
+  "homepage": "https://github.com/Sean-1274/DBD-Build-Logger#readme",
+  "bugs": {
+    "url": "https://github.com/Sean-1274/DBD-Build-Logger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sean-1274/DBD-Build-Logger.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
