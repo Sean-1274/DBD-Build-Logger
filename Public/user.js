@@ -5,7 +5,7 @@ if (registerForm) {
     registerForm.addEventListener("submit", registerUser);
 }
 
-function registerUser(event) {
+async function registerUser(event) {
     event.preventDefault();
 
     const user = {
@@ -16,7 +16,30 @@ function registerUser(event) {
         password: document.getElementById("password").value
     };
 
-    console.log("Registered User Object:", user);
+    try {
+        const response = await fetch("http://localhost:3500/users/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message);
+            return;
+        }
+
+        localStorage.setItem("userId", data.user_id);
+        localStorage.setItem("username", data.username);
+
+        window.location.href = "dashboard.html";
+
+    } catch (err) {
+        console.error("Register error:", err);
+    }
 }
 
 // Login form
@@ -26,7 +49,7 @@ if (loginForm) {
     loginForm.addEventListener("submit", loginUser);
 }
 
-function loginUser(event) {
+async function loginUser(event) {
     event.preventDefault();
 
     const loginData = {
@@ -34,5 +57,28 @@ function loginUser(event) {
         password: document.getElementById("password").value
     };
 
-    console.log("Login Object:", loginData);
+    try {
+        const response = await fetch("http://localhost:3500/users/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(loginData)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message);
+            return;
+        }
+
+        localStorage.setItem("userId", data.user_id);
+        localStorage.setItem("username", data.username);
+
+        window.location.href = "dashboard.html";
+
+    } catch (err) {
+        console.error("Login error:", err);
+    }
 }

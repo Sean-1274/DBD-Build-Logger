@@ -17,6 +17,56 @@ async function createBuildTable() {
 
 createBuildTable();
 
+// CREATE - a new build 
+async function createBuild(build) {
+    let sql = `
+        INSERT INTO BUILD (user_id, build_name, build_details)
+        VALUES (?, ?, ?);
+    `;
+
+    return await con.query(sql, [
+       build.userId,
+       build.buildName,
+       build.buildDetails
+    ]);
+}
+
+// READ - get all builds for one user
+async function getBuildsByUser(userId) {
+    let sql = `
+        SELECT * FROM BUILD
+        WHERE  user_id= ?;
+    `;
+
+    return await con.query(sql, [userId]);
+}
+
+// UPDATE - Update a build by build_id
+async function updateBuild(buildId, build) {
+    let sql = `
+        UPDATE BUILD
+        SET build_name = ?, build_details = ?
+        WHERE build_id = ?;
+    `;
+
+    return await con.query(sql, [
+        build.buildName,
+        build.buildDetails,
+        buildId
+    ]);
+}
+
+// DELETE - Delete user
+async function deleteBuild(buildId) {
+    let sql = `
+        DELETE FROM BUILD
+        WHERE build_id = ?;
+    `;
+
+    return await con.query(sql, [buildId]);
+}
+
+
 async function getAllBuilds() {
     let sql = `
       SELECT * FROM BUILD;
@@ -24,4 +74,10 @@ async function getAllBuilds() {
     return await con.query(sql);
 }
 
-module.exports = { getAllBuilds };
+module.exports = { 
+  getAllBuilds,
+  createBuild,
+  getBuildsByUser,
+  updateBuild,
+  deleteBuild 
+};
