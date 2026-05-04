@@ -70,17 +70,17 @@ Sean Wilk
 
 ## Business Rules 
 This diagram lists the business rules that define how the entities relate to one another, such as how one user can create many builds or match logs, and how builds and perks are connected through the BUILD_PERK table. Its purpose in database design is to formally describe the constraints and cardinality of relationships so the database accurately reflects the real-world rules of the application.
-![Business Rules](public/images/business_rules.png)
+![Business Rules](Public/images/business_rules.png)
 
 ---
 
 ## Entity Relationship Diagram (ERD)
 This is the completed Entity-Relationship Diagram for the DBD Build & Match Logger database. It visually represents the entities, their attributes, primary keys, foreign keys, and relationship cardinalities using crow’s foot notation. Its purpose in database design is to serve as the final blueprint for creating the database tables, enforcing relationships, and ensuring the database is logically organized and normalized.
-![ERD](public/images/erd.png)
+![ERD](Public/images/erd.png)
 
 ---
 
 ## Relations Diagram
 This diagram shows the main entities in the database system, including USER, BUILD, MATCH_LOG, PERK, and BUILD_PERK, along with their attributes and foreign key relationships. Its purpose in database design is to give a clear visual outline of how the tables are connected before implementation, helping identify primary keys, foreign keys, and the overall structure of the database.
-![Relations](public/images/relations.png)
+![Relations](Public/images/relations.png)
 
